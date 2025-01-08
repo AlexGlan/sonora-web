@@ -1,10 +1,13 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import routesConfig from './routes/routesConfig';
 import './styles/main.scss';
-import App from './App.tsx'
+
+const router = createBrowserRouter(routesConfig, {basename: '/white-noise-app/'});
 
 createRoot(document.getElementById('root')!).render(
     <StrictMode>
-        <App />
+        <RouterProvider router={router} />
     </StrictMode>,
 );
