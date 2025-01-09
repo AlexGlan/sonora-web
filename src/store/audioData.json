@@ -1,0 +1,56 @@
+[
+    {
+        "id": 1,
+        "name": "Rain",
+        "category": "Weather",
+        "fileName": "rain.ogg"
+    },
+    {
+        "id": 2,
+        "name": "Rain and Thunder",
+        "category": "Weather",
+        "fileName": "drizzle_and_thunder.ogg"
+    },
+    {
+        "id": 3,
+        "name": "Thunder",
+        "category": "Weather",
+        "fileName": "thunder.ogg"
+    },
+    {
+        "id": 4,
+        "name": "Birds",
+        "category": "Nature",
+        "fileName": "birds.ogg"
+    },
+    {
+        "id": 5,
+        "name": "Crickets",
+        "category": "Nature",
+        "fileName": "crickets.ogg"
+    },
+    {
+        "id": 6,
+        "name": "Cicadas",
+        "category": "Nature",
+        "fileName": "cicadas.ogg"
+    },
+    {
+        "id": 7,
+        "name": "Frogs",
+        "category": "Nature",
+        "fileName": "frogs.ogg"
+    },
+    {
+        "id": 8,
+        "name": "River",
+        "category": "Nature",
+        "fileName": "water_stream.ogg"
+    },
+    {
+        "id": 9,
+        "name": "Campfire",
+        "category": "Ambiance",
+        "fileName": "campfire.ogg"
+    }
+]
