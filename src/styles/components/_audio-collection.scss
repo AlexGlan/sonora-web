@@ -1,0 +1,19 @@
+@use '../abstracts' as *;
+
+.audio {
+    width: 90%;
+    margin: 0 auto;
+
+    &__list {
+        list-style: none;
+        display: flex;
+        gap: 1.8rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 2rem 0 1.5rem 0;
+
+        & > li {
+            margin-bottom: 1.2rem;
+        }
+    }
+}
