@@ -6,7 +6,7 @@ const AudioCollection = () => {
 
     return (
         <section className="audio">
-            <ul className="audio__list" role="list">
+            <ul className="audio__list" role="list" aria-label="Audio Tracks">
                 {
                     tracks.map(trackId => {
                         return (
