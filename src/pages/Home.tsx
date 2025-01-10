@@ -1,3 +1,4 @@
+import AudioCollection from "../components/AudioCollection";
 import Hero from "../components/Hero";
 import NavBar from "../components/NavBar";
 
@@ -7,6 +8,7 @@ const Home = () => {
             <NavBar />
             <main>
                 <Hero />
+                <AudioCollection />
             </main>
         </>
     )
