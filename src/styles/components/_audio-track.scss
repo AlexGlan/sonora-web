@@ -1,0 +1,39 @@
+@use '../abstracts' as *;
+
+.track {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__name {
+        font-weight: $fw-bold;
+    }
+
+    &__controls {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .track__playback-btn {
+            cursor: pointer;
+            border: 1px solid transparent;
+            background-color: transparent;
+            padding: .2em;
+            font-size: 1.6rem;
+            width: 1.4em;
+
+            .track__pause-icon {
+                color: $clr-teal;
+            }
+
+            .track__play-icon {
+                color: $clr-text-primary;
+            }
+        }
+
+        .track__volume-slider {
+            width: 80%;
+        }
+    }
+}
