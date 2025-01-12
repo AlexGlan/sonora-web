@@ -1,5 +1,13 @@
 @use '../abstracts' as *;
 
+@mixin range-thumb-style {
+    height: 1.1rem;
+    width: 1.1rem;
+    background-color: $clr-mauve;
+    border-radius: 50%;
+    border: none;
+}
+
 .track {
     display: flex;
     flex-direction: column;
@@ -40,7 +48,24 @@
         }
 
         .track__volume-slider {
-            width: 80%;
+            cursor: pointer;
+            width: 9rem;
+            height: .5rem;
+            -webkit-appearance: none;
+            appearance: none;
+            background-color: $clr-surface-1;
+            border-radius: 1rem;
+            margin-top: .6rem;
+            
+            &::-webkit-slider-thumb {
+                @include range-thumb-style;
+                -webkit-appearance: none;
+                appearance: none;
+            }
+
+            &::-moz-range-thumb {
+                @include range-thumb-style;
+            }
         }
     }
 }

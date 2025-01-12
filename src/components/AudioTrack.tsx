@@ -78,6 +78,9 @@ const AudioTrack = ({ trackId }: AudioTrackProps) => {
                     onChange={(e) => handleVolumeChange(e.target.value)}
                     className="track__volume-slider"
                     aria-label="Volume slider"
+                    style={{
+                        background: `linear-gradient(to right, #cba6f7 ${track.volume}%, #45475a ${track.volume}%)`
+                    }}
                 />
             </div>
             <audio
