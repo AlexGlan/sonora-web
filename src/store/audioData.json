@@ -3,54 +3,63 @@
         "id": 1,
         "name": "Rain",
         "category": "Weather",
-        "fileName": "rain.ogg"
+        "fileName": "rain.ogg",
+        "iconName": "rain"
     },
     {
         "id": 2,
         "name": "Rain and Thunder",
         "category": "Weather",
-        "fileName": "drizzle_and_thunder.ogg"
+        "fileName": "drizzle_and_thunder.ogg",
+        "iconName": "rain-and-thunder"
     },
     {
         "id": 3,
         "name": "Thunder",
         "category": "Weather",
-        "fileName": "thunder.ogg"
+        "fileName": "thunder.ogg",
+        "iconName": "thunder"
     },
     {
         "id": 4,
         "name": "Birds",
         "category": "Nature",
-        "fileName": "birds.ogg"
+        "fileName": "birds.ogg",
+        "iconName": "bird"
     },
     {
         "id": 5,
         "name": "Crickets",
         "category": "Nature",
-        "fileName": "crickets.ogg"
+        "fileName": "crickets.ogg",
+        "iconName": "locust"
     },
     {
         "id": 6,
         "name": "Cicadas",
         "category": "Nature",
-        "fileName": "cicadas.ogg"
+        "fileName": "cicadas.ogg",
+        "iconName": "locust"
     },
     {
         "id": 7,
         "name": "Frogs",
         "category": "Nature",
-        "fileName": "frogs.ogg"
+        "fileName": "frogs.ogg",
+        "iconName": "frog"
     },
     {
         "id": 8,
         "name": "River",
         "category": "Nature",
-        "fileName": "water_stream.ogg"
+        "fileName": "water_stream.ogg",
+        "iconName": "water"
     },
     {
         "id": 9,
         "name": "Campfire",
         "category": "Ambiance",
-        "fileName": "campfire.ogg"
+        "fileName": "campfire.ogg",
+        "iconName": "fire"
     }
 ]

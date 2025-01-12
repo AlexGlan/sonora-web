@@ -6,6 +6,7 @@ type AudioTrack = {
     name: string,
     category: string,
     fileName: string,
+    iconName: string,
     volume: number,
     isPlaying: boolean,
 }
@@ -29,6 +30,7 @@ data.forEach(track => {
         name: track.name,
         category: track.category,
         fileName: track.fileName,
+        iconName: track.iconName,
         volume: track.name === 'Rain' || track.name === 'Crickets' ? 30 : 0,
         isPlaying: false,
     };
