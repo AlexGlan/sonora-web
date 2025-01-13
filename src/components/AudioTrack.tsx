@@ -24,16 +24,14 @@ const AudioTrack = ({ trackId }: AudioTrackProps) => {
 
     if (audioRef.current) {
         audioRef.current.volume = track.volume * 0.01;
+        if (track.isPlaying) {
+            audioRef.current.play();
+        } else {
+            audioRef.current.pause();
+        }
     }
 
     const handlePlayback = () => {
-        if (audioRef.current) {
-            if (track.isPlaying) {
-                audioRef.current.pause();
-            } else {
-                audioRef.current.play();
-            }
-        }
         dispatch(setPlayStatus({
             trackId: track.id,
             isPlaying: !track.isPlaying

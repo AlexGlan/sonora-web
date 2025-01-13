@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice, current, PayloadAction } from "@reduxjs/toolkit";
 import data from './audioData.json';
 
 type AudioTrack = {
@@ -53,8 +53,37 @@ export const audioSlice = createSlice({
                 state.tracks.byId[trackId].isPlaying = isPlaying;
             }
         },
+        setGlobalVolume: (state, action: PayloadAction<string>) => {
+            state.tracks.allIds.forEach(trackId => {
+                if (state.tracks.byId[trackId].volume > 0 ||
+                    state.tracks.byId[trackId].isPlaying
+                ) {
+                    state.tracks.byId[trackId].volume = parseInt(action.payload);
+                }
+            });
+        },
+        setGlobalPlayStatus: (state, action: PayloadAction<boolean>) => {
+            state.tracks.allIds.forEach(trackId => {
+                if (state.tracks.byId[trackId].volume > 0) {
+                    if (action.payload === true) {
+                        state.tracks.byId[trackId].isPlaying = true;
+                    } else {
+                        state.tracks.byId[trackId].isPlaying = false;
+                    }
+                }
+            });
+        },
+        resetTracks: (state) => {
+            return initialState;
+        },
     }
 });
 
 export default audioSlice.reducer;
-export const { setVolume, setPlayStatus } = audioSlice.actions;
+export const { 
+    setVolume,
+    setPlayStatus,
+    setGlobalVolume,
+    setGlobalPlayStatus,
+    resetTracks,
+} = audioSlice.actions;
