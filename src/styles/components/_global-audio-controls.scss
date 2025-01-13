@@ -1,0 +1,59 @@
+@use '../abstracts' as *;
+
+@mixin global-slider-thumb {
+    height: 1.3rem;
+    width: 1.3rem;
+    background-color: $clr-mauve;
+    border-radius: 50%;
+    border: none;
+}
+
+.global-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1.8rem 0;
+
+    &__button-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 1.2rem;
+        gap: 1rem;
+
+        .global-controls__btn {
+            cursor: pointer;
+            border: 1px solid transparent;
+            background: transparent;
+            font-size: 3rem;
+            color: $clr-text-primary;
+            padding: 1rem;
+
+            .global-controls__icon {
+                aspect-ratio: 1;
+            }
+        }
+    }
+
+    &__slider {
+        cursor: pointer;
+        max-width: 80%;
+        width: 15rem;
+        height: .6rem;
+        -webkit-appearance: none;
+        appearance: none;
+        background-color: $clr-surface-1;
+        border-radius: 1rem;
+        margin-top: .6rem;
+
+        &::-webkit-slider-thumb {
+            @include global-slider-thumb;
+            -webkit-appearance: none;
+            appearance: none;
+        }
+
+        &::-moz-range-thumb {
+            @include global-slider-thumb;
+        }
+    }
+}
