@@ -31,14 +31,14 @@ const AudioTrack = ({ trackId }: AudioTrackProps) => {
         }
     }
 
-    const handlePlayback = () => {
+    const handlePlayback = (): void => {
         dispatch(setPlayStatus({
             trackId: track.id,
             isPlaying: !track.isPlaying
         }));
     }
 
-    const handleVolumeChange = (val: string) => {
+    const handleVolumeChange = (val: string): void => {
         dispatch(setVolume({
             trackId: track.id,
             volume: parseInt(val)
