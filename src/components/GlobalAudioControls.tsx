@@ -41,7 +41,7 @@ const GlobalAudioControls = () => {
                     className="global-controls__btn"
                     aria-label={isPlaying ? 'Pause all tracks' : 'Play all tracks'}
                     >
-                        <FontAwesomeIcon icon={isPlaying ? faPause : faPlay} className="global-controls__icon" />
+                    <FontAwesomeIcon icon={isPlaying ? faPause : faPlay} className="global-controls__icon" />
                 </button>
             </div>
             <input
