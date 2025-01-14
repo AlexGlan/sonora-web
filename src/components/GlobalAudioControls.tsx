@@ -39,7 +39,7 @@ const GlobalAudioControls = () => {
                 <button
                     onClick={handleGlobalPlayback}
                     className="global-controls__btn"
-                    aria-label={isPlaying ? 'Pause' : 'Play'}
+                    aria-label={isPlaying ? 'Pause all tracks' : 'Play all tracks'}
                     >
                         <FontAwesomeIcon icon={isPlaying ? faPause : faPlay} className="global-controls__icon" />
                 </button>
@@ -52,7 +52,7 @@ const GlobalAudioControls = () => {
                 value={volume}
                 onChange={(e) => handleGlobalVolumeChange(e.target.value)}
                 className="global-controls__slider"
-                aria-label="Volume slider"
+                aria-label="Master volume slider"
                 style={{
                     background: `linear-gradient(to right, #cba6f7 ${volume}%, #45475a ${volume}%)`
                 }}
