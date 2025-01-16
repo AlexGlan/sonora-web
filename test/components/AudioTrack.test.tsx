@@ -80,4 +80,21 @@ describe('AudioTrack', () => {
         expect(volumeSlider).toHaveValue('25');
         expect((within(audioTrack).getByRole('audio') as HTMLAudioElement).volume).toBe(0.25);
     });
+
+    it('Should stop audio playback and reset playback state when the user navigates to a different route', async () => {
+        const { user } = renderWithProviders();
+        let audioCollection = screen.getByRole('list', {name: /audio/i});
+        let audioTrack = within(audioCollection).getAllByRole('listitem')[1];
+
+        fireEvent.change(within(audioTrack).getByRole('slider', {name: /volume/i}), {target: {value: '25'}});
+        await user.click(within(audioTrack).getByRole('button', {name: /play/i}));
+        await user.click(screen.getByRole('link', {name: /about/i}));
+        await user.click(screen.getByRole('link', {name: /home/i}));
+
+        audioCollection = screen.getByRole('list', {name: /audio/i});
+        audioTrack = within(audioCollection).getAllByRole('listitem')[1];
+        expect(within(audioTrack).getByRole('slider', {name: /volume/i})).toHaveValue('25');
+        expect(within(audioTrack).getByRole('button', {name: /play/i})).toBeEnabled();
+        expect(within(audioTrack).queryByRole('button', {name: /pause/i})).not.toBeInTheDocument();
+    });
 });
