@@ -1,0 +1,61 @@
+@use '../abstracts' as *;
+
+.about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__description {
+        margin: 2.2rem 0;
+        width: 80%;
+
+        .about__text {
+            margin-bottom: 1.2rem;
+        }
+    }
+
+    &__links {
+        width: 80%;
+
+        .about__credits-text {
+            margin-bottom: .8rem;
+        }
+
+        .about__github {
+            margin-bottom: 1rem;
+
+            & > a {
+                cursor: pointer;
+                color: $clr-blue;
+                transition: color .2s ease;
+
+                &:is(:hover, :focus) {
+                    color: $clr-mauve;
+                }
+            }
+        }
+
+        .about__credits-list {
+            margin-bottom: 2.5rem;
+
+            & > li {
+                margin-left: 1.8rem;
+                margin-bottom: .5rem;
+                padding-left: .3rem;
+                line-height: 1.8rem;
+
+                & > a {
+                    cursor: pointer;
+                    word-wrap: break-word;
+                    color: $clr-blue;
+                    transition: color .2s ease;
+                    font-size: 1.3rem;
+    
+                    &:is(:hover, :focus) {
+                        color: $clr-mauve;
+                    }
+                }
+            }
+        }
+    }
+}

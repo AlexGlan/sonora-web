@@ -4,62 +4,89 @@
         "name": "Rain",
         "category": "Weather",
         "fileName": "rain.ogg",
-        "iconName": "rain"
+        "iconName": "rain",
+        "authorName": "PhilllChabbb",
+        "originalName": "SuburbRain_OutdoorLoop",
+        "originalAudioLink": "https://freesound.org/s/238431/"
     },
     {
         "id": 2,
         "name": "Rain & Thunder",
         "category": "Weather",
         "fileName": "drizzle_and_thunder.ogg",
-        "iconName": "rain-and-thunder"
+        "iconName": "rain-and-thunder",
+        "authorName": "plyboard9",
+        "originalName": "Rain&ThunderLoop2Heavy",
+        "originalAudioLink": "https://freesound.org/s/531872/"
     },
     {
         "id": 3,
         "name": "Thunder",
         "category": "Weather",
         "fileName": "thunder.ogg",
-        "iconName": "thunder"
+        "iconName": "thunder",
+        "authorName": "Euphrosyyn",
+        "originalName": "Amb_Night_Distant_Thunder_Menacing_Outside",
+        "originalAudioLink": "https://freesound.org/s/477879/"
     },
     {
         "id": 4,
         "name": "Birds",
         "category": "Nature",
         "fileName": "birds.ogg",
-        "iconName": "bird"
+        "iconName": "bird",
+        "authorName": "maarten91",
+        "originalName": "Binaural Birds LOOP 2",
+        "originalAudioLink": "https://freesound.org/s/468448/"
     },
     {
         "id": 5,
         "name": "Crickets",
         "category": "Nature",
         "fileName": "crickets.ogg",
-        "iconName": "locust"
+        "iconName": "locust",
+        "authorName": "Brett+Butter",
+        "originalName": "EXT Siquenza, Spain NIGHT: Mountain sounds, crickets, very minimal industrial noise",
+        "originalAudioLink": "https://freesound.org/s/552157/"
     },
     {
         "id": 6,
         "name": "Cicadas",
         "category": "Nature",
         "fileName": "cicadas.ogg",
-        "iconName": "locust"
+        "iconName": "locust",
+        "authorName": "mannhawks",
+        "originalName": "cicadas_loud",
+        "originalAudioLink": "https://freesound.org/s/162682/"
     },
     {
         "id": 7,
         "name": "Frogs",
         "category": "Nature",
         "fileName": "frogs.ogg",
-        "iconName": "frog"
+        "iconName": "frog",
+        "authorName": "Nox_Sound",
+        "originalName": "Ambiance_Frog_Night_Loop_Stereo",
+        "originalAudioLink": "https://freesound.org/s/482117/" 
     },
     {
         "id": 8,
         "name": "River",
         "category": "Nature",
         "fileName": "water_stream.ogg",
-        "iconName": "water"
+        "iconName": "water",
+        "authorName": "steaq",
+        "originalName": "Relaxing river stream running water seamless loop",
+        "originalAudioLink": "https://freesound.org/s/548767/"
     },
     {
         "id": 9,
         "name": "Campfire",
         "category": "Ambiance",
         "fileName": "campfire.ogg",
-        "iconName": "fire"
+        "iconName": "fire",
+        "authorName": "HECKFRICKER",
+        "originalName": "Campfire 01",
+        "originalAudioLink": "https://freesound.org/s/729395/"
     }
 ]
