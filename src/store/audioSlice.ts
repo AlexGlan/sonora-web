@@ -1,4 +1,4 @@
-import { createSlice, current, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import data from './audioData.json';
 
 type AudioTrack = {
@@ -73,7 +73,7 @@ export const audioSlice = createSlice({
                 }
             });
         },
-        resetTracks: (state) => {
+        resetTracks: () => {
             return initialState;
         },
     }
