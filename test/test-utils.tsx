@@ -7,7 +7,7 @@ import { Provider } from 'react-redux';
 
 export const renderWithProviders = (
     options = {
-        initialEntries: ['/'],
+        initialEntries: ['/white-noise-app/'],
         initialIndex: 0,
     },
     preloadedState: Partial<RootState> = {}
