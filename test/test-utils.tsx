@@ -12,7 +12,10 @@ export const renderWithProviders = (
     },
     preloadedState: Partial<RootState> = {}
 ) => {
-    const testRouter = createMemoryRouter(routesConfig, options);
+    const testRouter = createMemoryRouter(routesConfig, {
+        ...options,
+        basename: '/white-noise-app/',
+    });
     const testStore = setupStore(preloadedState);
     return {
         user: userEvent.setup(),
