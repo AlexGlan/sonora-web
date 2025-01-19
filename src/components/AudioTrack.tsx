@@ -13,6 +13,7 @@ const AudioTrack = ({ trackId }: AudioTrackProps) => {
     const audioRef = useRef<HTMLAudioElement>(null);
     const track = useAppSelector(state => state.audio.tracks.byId[trackId]);
     const dispatch = useAppDispatch();
+    const isIconAvailable = !/.*\/undefined$/i.test(getImageUrl(track.iconName + '-solid-icon.svg'));
 
     // Reset playback after changing routes
     if (track.isPlaying && audioRef.current == null) {
@@ -48,8 +49,8 @@ const AudioTrack = ({ trackId }: AudioTrackProps) => {
     return (
         <div className="track">
             <img
-                src={getImageUrl(track.iconName + '-solid-icon.svg')}
-                alt={`${track.name} icon`}
+                src={isIconAvailable ? getImageUrl(track.iconName + '-solid-icon.svg') : getImageUrl('default-solid-icon.svg')}
+                alt={isIconAvailable ? `${track.name} icon` : 'Music icon'}
                 className="track__icon"
                 style={{
                     filter: `invert(0.65) sepia(1) saturate(1.8) hue-rotate(${track.isPlaying ? '120':'200'}deg)`
