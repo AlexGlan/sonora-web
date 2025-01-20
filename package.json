@@ -1,6 +1,7 @@
 {
   "name": "white-noise-app",
   "private": true,
+  "homepage": "https://alexglan.github.io/white-noise-app/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
@@ -22,7 +23,7 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-redux": "^9.2.0",
-    "react-router-dom": "^7.1.1",
+    "react-router-dom": "^6.28.2",
     "sass": "^1.83.1"
   },
   "devDependencies": {
