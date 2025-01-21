@@ -6,7 +6,7 @@ I created this project because I find white noise and ambient sounds more effect
 
 ## Live Version
 
-You can access the live version of the project [here](alexglan.github.io/white-noise-app/).
+You can access the live version of the project [here](https://alexglan.github.io/white-noise-app/).
 
 ## Running the Project Locally
 *node.js 18+, npm 8+ required*
