@@ -1,0 +1,70 @@
+@use '../abstracts' as *;
+
+.search-form {
+    width: 100%;
+    max-width: 32rem;
+    margin: 1.2rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &__label {
+        font-size: 1.4rem;
+        padding-left: 1.2rem;
+    }
+
+    &__container {
+        border-radius: 2rem;
+        margin: .8rem 0;
+        display: flex;
+        align-items: center;
+        background-color: $clr-crust;
+
+        &:focus-within {
+            outline: 1px solid $clr-lavender;
+        }
+    }
+
+    &__input {
+        width: 90%;
+        font-size: 1.1rem;
+        padding: .8em 1.2em;
+        background: none;
+        color: $clr-lavender;
+        border: 1px solid transparent;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    &__submit {
+        cursor: pointer;
+        padding: 1rem;
+        font-size: 1.6rem;
+        border: 1px solid transparent;
+        background: none;
+        color: $clr-lavender;
+        aspect-ratio: 1;
+        transition: opacity .2s ease;
+        outline: none;
+
+        &:focus-visible {
+            outline: 1px solid $clr-lavender;
+            border-radius: 2rem;
+        }
+    }
+
+    .error-message {
+        display: inline-block;
+        font-size: 1.4rem;
+        color: $clr-red;
+        text-align: center;
+    }
+}
+
+@media (hover: hover) {
+    .search-form__submit:hover {
+        opacity: .6;
+    }
+}
