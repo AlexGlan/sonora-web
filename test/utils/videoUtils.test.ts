@@ -11,6 +11,10 @@ describe('videoUtils', () => {
             'http://www.youtube.com/live/XXXXXXXXXXX',
             'https://www.youtube.com/live/XXXXXXXXXXX?feature=shared',
             'http://www.youtube.com/live/XXXXXXXXXXX?feature=shared',
+            'https://www.youtube.com/watch?v=XXXXXXXXXXX&t=1234s',
+            'http://www.youtube.com/watch?v=XXXXXXXXXXX&t=1234s',
+            'https://www.youtube.com/watch?v=XXXXXXXXXXX&list=XXXXXXXXXXXX-XXXX-XXXXXXXXXX-XXXXX&index=1',
+            'https://www.youtube.com/watch?v=XXXXXXXXXXX&list=XXXXXXXXXXXX-XXXX-XXXXXXXXXX-XXXXX&index=1',
         ];
         const youtubeIncorrectUrls = [
             undefined,
