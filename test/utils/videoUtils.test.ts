@@ -36,7 +36,6 @@ describe('videoUtils', () => {
             'https:/youtube.com/watch?v=XXXXXXXXXXX',
             'https://www.youtube.com/watch?v=XXXXXXXXXXXhttps://www.youtube.com/watch?v=XXXXXXXXXXX',
             'https://www.youtube.com/@XXXXXXXXXXXXXXX/videos'
-
         ];
           
         it('Should return true for valid youtube links', () => {
