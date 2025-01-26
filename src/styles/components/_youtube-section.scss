@@ -1,0 +1,25 @@
+@use '../abstracts' as *;
+
+.youtube {
+    width: 90%;
+    margin: 2rem auto 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    & > span:first-child {
+        font-size: 2.2rem;
+        font-weight: $fw-bold;
+        color: $clr-lavender;
+        margin-bottom: 1.1rem;
+        text-align: center;
+    }
+
+    &__subhead {
+        max-width: 60rem;
+        text-align: center;
+        margin-bottom: 1.2rem;
+        line-height: 2.2rem;
+    }
+}
