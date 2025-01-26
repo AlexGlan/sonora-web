@@ -1,8 +1,10 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import audioSlice from "./audioSlice";
+import videoSlice from "./videoSlice";
 
 const rootReducer = combineReducers({
     'audio': audioSlice,
+    'video': videoSlice,
 });
 
 export const setupStore = (preloadedState: Partial<RootState> = {}) => {

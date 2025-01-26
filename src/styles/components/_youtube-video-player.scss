@@ -1,0 +1,16 @@
+@use '../abstracts' as *;
+
+.youtube-video-container  {
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+
+    & > iframe {
+        border-radius: 1rem;
+        box-shadow: 5px 5px 7px $clr-crust;
+        width: 100%;
+        max-width: 560px;
+        height: 315px;
+    }
+}
