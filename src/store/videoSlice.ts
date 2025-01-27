@@ -30,8 +30,11 @@ export const videoSlice = createSlice({
                     : 'The YouTube video link you provided is invalid. Please check the URL and try again.';
             }
         },
+        resetSearchQuery: (state) => {
+            state.searchQuery = '';
+        },
     }
 });
 
 export default videoSlice.reducer;
-export const { setSearchQuery, setVideoSrc } = videoSlice.actions;
+export const { setSearchQuery, setVideoSrc, resetSearchQuery } = videoSlice.actions;
