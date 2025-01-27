@@ -64,8 +64,8 @@ const SearchForm = (props: SearchFormProps) => {
                 )}
                 <button
                     type="submit"
-                    aria-label="Submit"
-                    title="Submit"
+                    aria-label="Search"
+                    title="Search"
                     className="search-form__submit-btn"
                 >
                     <FontAwesomeIcon icon={faMagnifyingGlass} className="submit-icon" />
