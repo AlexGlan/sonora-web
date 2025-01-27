@@ -1,5 +1,5 @@
 import { useAppDispatch, useAppSelector } from "../app/hooks";
-import { setSearchQuery, setVideoSrc } from "../store/videoSlice";
+import { resetSearchQuery, setSearchQuery, setVideoSrc } from "../store/videoSlice";
 import SearchForm from "./SearchForm";
 import YoutubeVideoPlayer from "./YoutubeVideoPlayer"
 
@@ -15,6 +15,10 @@ const YoutubeSection = () => {
 
     const handleFormChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
         dispatch(setSearchQuery(e.target.value));
+    }
+
+    const handleInputClear = (): void => {
+        dispatch(resetSearchQuery());
     }
 
     return (
@@ -33,6 +37,7 @@ const YoutubeSection = () => {
                 error={error}
                 handleSubmit={handleFormSubmit}
                 handleChange={handleFormChange}
+                handleClear={handleInputClear}
             />
             <YoutubeVideoPlayer />
         </section>

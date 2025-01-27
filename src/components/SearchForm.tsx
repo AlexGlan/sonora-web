@@ -1,5 +1,6 @@
-import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons"
+import { faMagnifyingGlass, faXmark } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { useRef } from "react"
 
 type SearchFormProps = {
     label: string,
@@ -9,7 +10,8 @@ type SearchFormProps = {
     placeholder?: string,
     error?: string | null,
     handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void,
-    handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void
+    handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void,
+    handleClear?: () => void,
 }
 
 const SearchForm = (props: SearchFormProps) => {
@@ -21,8 +23,10 @@ const SearchForm = (props: SearchFormProps) => {
         placeholder,
         error,
         handleSubmit,
-        handleChange 
+        handleChange,
+        handleClear, 
     } = props
+    const inputRef = useRef<HTMLInputElement | null>(null);
 
     return (
         <form onSubmit={handleSubmit} className="search-form">
@@ -31,6 +35,7 @@ const SearchForm = (props: SearchFormProps) => {
             </label>
             <div className='search-form__container'>
                 <input
+                    ref={inputRef}
                     type="text"
                     name={name}
                     id={name}
@@ -43,11 +48,25 @@ const SearchForm = (props: SearchFormProps) => {
                     aria-invalid={error ? 'true' : undefined}
                     aria-describedby={error ? `${name}-error` : undefined}
                 />
+                {value && handleClear && (
+                    <button
+                        type="button"
+                        onClick={() => {
+                            handleClear();
+                            inputRef.current?.focus();
+                        }}
+                        aria-label="Clear"
+                        title="Clear"
+                        className="search-form__clear-btn"
+                    >
+                        <FontAwesomeIcon icon={faXmark} className="clear-icon" />
+                    </button>
+                )}
                 <button
                     type="submit"
                     aria-label="Submit"
                     title="Submit"
-                    className="search-form__submit"
+                    className="search-form__submit-btn"
                 >
                     <FontAwesomeIcon icon={faMagnifyingGlass} className="submit-icon" />
                 </button>
@@ -58,3 +77,4 @@ const SearchForm = (props: SearchFormProps) => {
 }
 
 export default SearchForm;
+// 
