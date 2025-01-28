@@ -58,7 +58,7 @@ const ParticleComponent = () => {
                             // @ts-ignore
                             area: 800,
                         },
-                        value: 200,
+                        value: 250,
                     },
                     opacity: {
                         value: 0.5,
