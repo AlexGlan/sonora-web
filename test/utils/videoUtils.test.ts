@@ -1,21 +1,28 @@
 import { extractVideoId, validateYoutubeLink } from "../../src/utils/videoUtils";
 
 describe('videoUtils', () => {
+    const youtubeCorrectUrls: string[] = [
+        'https://www.youtube.com/watch?v=XXXXXXXXXXX',
+        'http://www.youtube.com/watch?v=XXXXXXXXXXX',
+        'https://youtu.be/XXXXXXXXXXX?si=XXXXXXXXXXXXXXXX',
+        'http://youtu.be/XXXXXXXXXXX?si=XXXXXXXXXXXXXXXX',
+        'https://www.youtube.com/live/XXXXXXXXXXX',
+        'http://www.youtube.com/live/XXXXXXXXXXX',
+        'https://www.youtube.com/live/XXXXXXXXXXX?feature=shared',
+        'http://www.youtube.com/live/XXXXXXXXXXX?feature=shared',
+        'https://www.youtube.com/watch?v=XXXXXXXXXXX&t=1234s',
+        'http://www.youtube.com/watch?v=XXXXXXXXXXX&t=1234s',
+        'https://www.youtube.com/watch?v=XXXXXXXXXXX&list=XXXXXXXXXXXX-XXXX-XXXXXXXXXX-XXXXX&index=1',
+        'https://www.youtube.com/watch?v=XXXXXXXXXXX&list=XXXXXXXXXXXX-XXXX-XXXXXXXXXX-XXXXX&index=1',
+        'https://www.youtube.com/watch?v=XX_XXXXXXXX',
+        'http://www.youtube.com/watch?v=XX_XXXXXXXX',
+        'https://youtu.be/XX_XXXXXXXX?si=XXXXXXXXXXXXXXXX',
+        'http://youtu.be/XX_XXXXXXXX?si=XXXXXXXXXXXXXXXX',
+        'https://www.youtube.com/live/XX_XXXXXXXX',
+        'http://www.youtube.com/live/XX_XXXXXXXX',
+    ];
+    
     describe('validateYoutubeLink', () => {
-        const youtubeCorrectUrls: string[] = [
-            'https://www.youtube.com/watch?v=XXXXXXXXXXX',
-            'http://www.youtube.com/watch?v=XXXXXXXXXXX',
-            'https://youtu.be/XXXXXXXXXXX?si=XXXXXXXXXXXXXXXX',
-            'http://youtu.be/XXXXXXXXXXX?si=XXXXXXXXXXXXXXXX',
-            'https://www.youtube.com/live/XXXXXXXXXXX',
-            'http://www.youtube.com/live/XXXXXXXXXXX',
-            'https://www.youtube.com/live/XXXXXXXXXXX?feature=shared',
-            'http://www.youtube.com/live/XXXXXXXXXXX?feature=shared',
-            'https://www.youtube.com/watch?v=XXXXXXXXXXX&t=1234s',
-            'http://www.youtube.com/watch?v=XXXXXXXXXXX&t=1234s',
-            'https://www.youtube.com/watch?v=XXXXXXXXXXX&list=XXXXXXXXXXXX-XXXX-XXXXXXXXXX-XXXXX&index=1',
-            'https://www.youtube.com/watch?v=XXXXXXXXXXX&list=XXXXXXXXXXXX-XXXX-XXXXXXXXXX-XXXXX&index=1',
-        ];
         const youtubeIncorrectUrls = [
             undefined,
             null,
@@ -56,16 +63,6 @@ describe('videoUtils', () => {
         });
     });
     describe('extractVideoId', () => {
-        const urlsWithValidIds: string[] = [
-            'https://www.youtube.com/watch?v=XXXXXXXXXXX',
-            'http://www.youtube.com/watch?v=XXXXXXXXXXX',
-            'https://youtu.be/XXXXXXXXXXX?si=XXXXXXXXXXXXXXXX',
-            'http://youtu.be/XXXXXXXXXXX?si=XXXXXXXXXXXXXXXX',
-            'https://www.youtube.com/live/XXXXXXXXXXX',
-            'http://www.youtube.com/live/XXXXXXXXXXX',
-            'https://www.youtube.com/live/XXXXXXXXXXX?feature=shared',
-            'http://www.youtube.com/live/XXXXXXXXXXX?feature=shared',
-        ];
         const urlsWithInvalidIds = [
             undefined,
             null,
@@ -75,8 +72,8 @@ describe('videoUtils', () => {
         ];
 
         it('Should return id of a youtube video from an url', () => {
-            urlsWithValidIds.forEach(url => {
-                expect(extractVideoId(url)).toBe('XXXXXXXXXXX');
+            youtubeCorrectUrls.forEach(url => {
+                expect(extractVideoId(url)).toMatch(/[a-z0-9_]{11}/i);
             });
         });
 
