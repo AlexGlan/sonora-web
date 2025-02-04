@@ -57,7 +57,7 @@ describe('videoUtils', () => {
 
         it('Should return false for invalid youtube links', () => {
             youtubeIncorrectUrls.forEach(invalidUrl => {
-                // @ts-ignore | passing wrong types on purpose
+                // @ts-expect-error
                 expect(validateYoutubeLink(invalidUrl)).toBe(false);
             });
         });
@@ -79,7 +79,7 @@ describe('videoUtils', () => {
 
         it('Should return null if the url is invalid or the video id can\'t be extracted', () => {
             urlsWithInvalidIds.forEach(url => {
-                // @ts-ignore | passing wrong types on purpose
+                // @ts-expect-error
                 expect(extractVideoId(url)).toBeNull();
             });
         });
