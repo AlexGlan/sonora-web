@@ -7,13 +7,17 @@ const NavBar = () => {
         <nav className="nav">
             <FontAwesomeIcon icon={faMugHot} className="nav__logo" />
             <ul className="nav__list" role="list">
-                <li className="nav__link">
-                    <NavLink to='/' className={ ({isActive}) => isActive ? 'active-link' : undefined }>
+                <li>
+                    <NavLink to='/' className={({isActive}) => (
+                        isActive ? 'nav__link nav__link--active' : 'nav__link'
+                    )}>
                         Home
                     </NavLink>
                 </li>
-                <li className="nav__link">
-                    <NavLink to='/about' className={ ({isActive}) => isActive ? 'active-link' : undefined }>
+                <li>
+                    <NavLink to='/about' className={({isActive}) => (
+                        isActive ? 'nav__link nav__link--active' : 'nav__link'
+                    )}>
                         About
                     </NavLink>
                 </li>

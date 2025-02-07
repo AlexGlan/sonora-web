@@ -24,17 +24,25 @@
         width: 100%;
         gap: 1.2rem;
 
-        .nav__link > a {
+        .nav__link {
             cursor: pointer;
             font-size: 1.5rem;
-            color: $clr-text-primary;
+            color: $clr-subtext-0;
             text-decoration: none;
-            opacity: 1;
-        }
 
-        .active-link {
-            opacity: .6 !important;
+            &--active {
+                color: $clr-lavender;
+            }
         }
-        
+    }
+}
+
+@media (hover: hover) {
+    .nav__link {
+        transition: color .2s ease;
+
+        &:is(:hover,:focus) {
+            color: $clr-lavender;
+        }
     }
 }
