@@ -33,6 +33,7 @@ const GlobalAudioControls = () => {
                     onClick={handleReset}
                     className="global-controls__btn"
                     aria-label="Reset tracks"
+                    title="Reset"
                 >
                     <FontAwesomeIcon icon={faArrowRotateRight} className="global-controls__icon" />
                 </button>
@@ -40,6 +41,7 @@ const GlobalAudioControls = () => {
                     onClick={handleGlobalPlayback}
                     className="global-controls__btn"
                     aria-label={isPlaying ? 'Pause all tracks' : 'Play all tracks'}
+                    title={isPlaying? 'Pause All' : 'Play All'}
                     >
                     <FontAwesomeIcon icon={isPlaying ? faPause : faPlay} className="global-controls__icon" />
                 </button>
