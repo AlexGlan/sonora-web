@@ -3,90 +3,90 @@
         "id": 1,
         "name": "Rain",
         "category": "Weather",
-        "fileName": "rain.ogg",
         "iconName": "rain",
         "authorName": "PhilllChabbb",
         "originalName": "SuburbRain_OutdoorLoop",
-        "originalAudioLink": "https://freesound.org/s/238431/"
+        "originalAudioLink": "https://freesound.org/s/238431/",
+        "audioSrc": "https://cdn.freesound.org/previews/238/238431_4205952-lq.ogg"
     },
     {
         "id": 2,
         "name": "Rain & Thunder",
         "category": "Weather",
-        "fileName": "drizzle_and_thunder.ogg",
         "iconName": "rain-and-thunder",
         "authorName": "plyboard9",
         "originalName": "Rain&ThunderLoop2Heavy",
-        "originalAudioLink": "https://freesound.org/s/531872/"
+        "originalAudioLink": "https://freesound.org/s/531872/",
+        "audioSrc": "https://cdn.freesound.org/previews/531/531872_1059037-lq.ogg"
     },
     {
         "id": 3,
         "name": "Thunder",
         "category": "Weather",
-        "fileName": "thunder.ogg",
         "iconName": "thunder",
         "authorName": "Euphrosyyn",
         "originalName": "Amb_Night_Distant_Thunder_Menacing_Outside",
-        "originalAudioLink": "https://freesound.org/s/477879/"
+        "originalAudioLink": "https://freesound.org/s/477879/",
+        "audioSrc": "https://cdn.freesound.org/previews/477/477879_5051822-lq.ogg"
     },
     {
         "id": 4,
         "name": "Birds",
         "category": "Nature",
-        "fileName": "birds.ogg",
         "iconName": "bird",
         "authorName": "maarten91",
         "originalName": "Binaural Birds LOOP 2",
-        "originalAudioLink": "https://freesound.org/s/468448/"
+        "originalAudioLink": "https://freesound.org/s/468448/",
+        "audioSrc": "https://cdn.freesound.org/previews/468/468448_3405405-lq.ogg"
     },
     {
         "id": 5,
         "name": "Crickets",
         "category": "Nature",
-        "fileName": "crickets.ogg",
         "iconName": "locust",
         "authorName": "Brett+Butter",
         "originalName": "EXT Siquenza, Spain NIGHT: Mountain sounds, crickets, very minimal industrial noise",
-        "originalAudioLink": "https://freesound.org/s/552157/"
+        "originalAudioLink": "https://freesound.org/s/552157/",
+        "audioSrc": "https://cdn.freesound.org/previews/552/552157_6838039-lq.ogg"
     },
     {
         "id": 6,
         "name": "Cicadas",
         "category": "Nature",
-        "fileName": "cicadas.ogg",
         "iconName": "locust",
         "authorName": "mannhawks",
         "originalName": "cicadas_loud",
-        "originalAudioLink": "https://freesound.org/s/162682/"
+        "originalAudioLink": "https://freesound.org/s/162682/",
+        "audioSrc": "https://cdn.freesound.org/previews/162/162682_2028587-lq.ogg"
     },
     {
         "id": 7,
         "name": "Frogs",
         "category": "Nature",
-        "fileName": "frogs.ogg",
         "iconName": "frog",
         "authorName": "Nox_Sound",
         "originalName": "Ambiance_Frog_Night_Loop_Stereo",
-        "originalAudioLink": "https://freesound.org/s/482117/" 
+        "originalAudioLink": "https://freesound.org/s/482117/",
+        "audioSrc": "https://cdn.freesound.org/previews/482/482117_9250976-lq.ogg"
     },
     {
         "id": 8,
         "name": "River",
         "category": "Nature",
-        "fileName": "water_stream.ogg",
         "iconName": "water",
         "authorName": "steaq",
         "originalName": "Relaxing river stream running water seamless loop",
-        "originalAudioLink": "https://freesound.org/s/548767/"
+        "originalAudioLink": "https://freesound.org/s/548767/",
+        "audioSrc": "https://cdn.freesound.org/previews/548/548767_1474204-lq.ogg"
     },
     {
         "id": 9,
         "name": "Campfire",
         "category": "Ambiance",
-        "fileName": "campfire.ogg",
         "iconName": "fire",
         "authorName": "HECKFRICKER",
         "originalName": "Campfire 01",
-        "originalAudioLink": "https://freesound.org/s/729395/"
+        "originalAudioLink": "https://freesound.org/s/729395/",
+        "audioSrc": "https://cdn.freesound.org/previews/729/729395_12863902-lq.ogg"
     }
 ]

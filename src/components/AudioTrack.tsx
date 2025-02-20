@@ -84,7 +84,7 @@ const AudioTrack = ({ trackId }: AudioTrackProps) => {
             </div>
             <audio
                 ref={audioRef}
-                src={new URL(`../assets/audio/${track.fileName}`, import.meta.url).href}
+                src={track.audioSrc}
                 role="audio"
                 loop
             ></audio>
