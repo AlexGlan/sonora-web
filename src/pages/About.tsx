@@ -2,6 +2,7 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import NavBar from "../components/NavBar";
 import audioData from '../store/audioData.json';
+import Footer from "../components/Footer";
 
 const About = () => {
     return (
@@ -43,6 +44,7 @@ const About = () => {
                     </ul>
                 </div>
             </main>
+            <Footer />
         </>
     )
 }
