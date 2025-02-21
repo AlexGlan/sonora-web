@@ -1,4 +1,5 @@
 import AudioCollection from "../components/AudioCollection";
+import Footer from "../components/Footer";
 import GlobalAudioControls from "../components/GlobalAudioControls";
 import Hero from "../components/Hero";
 import NavBar from "../components/NavBar";
@@ -14,6 +15,7 @@ const Home = () => {
                 <AudioCollection />
                 <YoutubeSection />
             </main>
+            <Footer />
         </>
     )
 }
