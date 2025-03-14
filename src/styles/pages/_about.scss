@@ -23,16 +23,6 @@
 
         .about__github {
             margin-bottom: 1rem;
-
-            & > a {
-                cursor: pointer;
-                color: $clr-blue;
-                transition: color .2s ease;
-
-                &:is(:hover, :focus) {
-                    color: $clr-mauve;
-                }
-            }
         }
 
         .about__credits-list {
@@ -45,15 +35,8 @@
                 line-height: 1.8rem;
 
                 & > a {
-                    cursor: pointer;
                     word-wrap: break-word;
-                    color: $clr-blue;
-                    transition: color .2s ease;
                     font-size: 1.3rem;
-    
-                    &:is(:hover, :focus) {
-                        color: $clr-mauve;
-                    }
                 }
             }
         }

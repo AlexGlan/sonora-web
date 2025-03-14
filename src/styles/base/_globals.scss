@@ -8,3 +8,13 @@ img {
     width: 100%;
     height: auto;
 }
+
+a {
+    cursor: pointer;
+    color: $clr-blue;
+    transition: color .2s ease;
+
+    &:is(:hover, :focus) {
+        color: $clr-mauve;
+    }
+}
