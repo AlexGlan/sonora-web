@@ -16,14 +16,7 @@
         }
 
         &-link {
-            cursor: pointer;
             text-decoration: none;
-            color: $clr-blue;
-            transition: color .2s ease;
-
-            &:is(:hover, :focus) {
-                color: $clr-mauve;
-            }
         }
     }
 }
