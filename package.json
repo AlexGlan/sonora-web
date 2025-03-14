@@ -1,7 +1,8 @@
 {
-  "name": "white-noise-app",
+  "name": "sonora-web",
+  "description": "Sonora web application",
   "private": true,
-  "homepage": "https://alexglan.github.io/white-noise-app/",
+  "homepage": "https://alexglan.github.io/sonora-web/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
