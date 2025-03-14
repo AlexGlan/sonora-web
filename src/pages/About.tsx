@@ -24,7 +24,7 @@ const About = () => {
                 </div>
                 <div className="about__links">
                     <p className="about__github">
-                        Source code: <a href="https://github.com/AlexGlan/white-noise-app" target="_blank">Github <FontAwesomeIcon icon={faGithub} /></a>
+                        Source code: <a href="https://github.com/AlexGlan/sonora-web" target="_blank">Github <FontAwesomeIcon icon={faGithub} /></a>
                     </p>
                     <p className="about__credits-text">
                         ✨ Special thanks to the following people for generously sharing their recordings for free:
