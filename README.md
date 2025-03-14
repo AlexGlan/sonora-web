@@ -1,12 +1,12 @@
-# White Noise App
+# Sonora Web App
 
-A web app for creating white noise and ambient sounds to help with focus, relaxation, or sleep. Using the Web Audio API, it lets you mix and adjust background sounds and audio collections to suit your needs.
+Sonora is a web app for creating white noise and ambient sounds to help with focus, relaxation, or sleep. Using the Web Audio API, it lets you mix and adjust background sounds and audio collections to suit your needs.
 
 I created this project because I find white noise and ambient sounds more effective than music for staying focused and productive. My goal is to make this experience as simple, customizable, and accessible as possible.
 
 ## Live Version
 
-You can access the live version of the project [here](https://alexglan.github.io/white-noise-app/).
+You can access the live version of the project [here](https://alexglan.github.io/sonora-web/).
 
 ## Running the Project Locally
 *node.js 18+, npm 8+ required*
