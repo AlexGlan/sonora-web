@@ -6,7 +6,7 @@ import { setVolume, setPlayStatus } from "../store/audioSlice";
 import { getImageUrl } from "../utils/imageUtils";
 
 type AudioTrackProps = {
-    trackId: number,
+    trackId: string,
 }
 
 const AudioTrack = ({ trackId }: AudioTrackProps) => {
