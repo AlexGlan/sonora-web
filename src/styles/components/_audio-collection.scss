@@ -17,4 +17,47 @@
             margin-bottom: 1.2rem;
         }
     }
+
+    &__load {
+        margin: 2.5rem auto;
+        overflow-y: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        &-btn {
+            cursor: pointer;
+            font-family: $ff-primary;
+            font-size: 1.3rem;
+            font-weight: $fw-bold;
+            color: $clr-lavender;
+            background-color: $clr-surface-0;
+            border: 1px solid transparent;
+            padding: 1.2rem 1.7rem;
+            border-radius: 2rem;
+            margin: 1rem 0;
+            transition: background-color .2s ease-out;
+        }
+
+        &-disclaimer {
+            font-size: 1.2rem;
+            padding: .5rem 0;
+            text-align: center;
+            line-height: 1.8rem;
+            color: $clr-subtext-0;
+            max-width: 70%;
+
+            // Make emoji bigger
+            & > span {
+                font-size: 1.8rem;
+            }
+        }
+    }
+}
+
+@media (hover: hover) {
+    .audio__load-btn:is(:hover,:focus) {
+        background-color: $clr-surface-2;
+    }
 }
