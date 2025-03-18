@@ -1,6 +1,6 @@
 [
     {
-        "id": 1,
+        "id": "1",
         "name": "Rain",
         "category": "Weather",
         "iconName": "rain",
@@ -10,17 +10,7 @@
         "audioSrc": "https://cdn.freesound.org/previews/238/238431_4205952-lq.ogg"
     },
     {
-        "id": 2,
-        "name": "Rain & Thunder",
-        "category": "Weather",
-        "iconName": "rain-and-thunder",
-        "authorName": "plyboard9",
-        "originalName": "Rain&ThunderLoop2Heavy",
-        "originalAudioLink": "https://freesound.org/s/531872/",
-        "audioSrc": "https://cdn.freesound.org/previews/531/531872_1059037-lq.ogg"
-    },
-    {
-        "id": 3,
+        "id": "2",
         "name": "Thunder",
         "category": "Weather",
         "iconName": "thunder",
@@ -30,7 +20,7 @@
         "audioSrc": "https://cdn.freesound.org/previews/477/477879_5051822-lq.ogg"
     },
     {
-        "id": 4,
+        "id": "3",
         "name": "Birds",
         "category": "Nature",
         "iconName": "bird",
@@ -40,7 +30,7 @@
         "audioSrc": "https://cdn.freesound.org/previews/468/468448_3405405-lq.ogg"
     },
     {
-        "id": 5,
+        "id": "4",
         "name": "Crickets",
         "category": "Nature",
         "iconName": "locust",
@@ -50,27 +40,7 @@
         "audioSrc": "https://cdn.freesound.org/previews/552/552157_6838039-lq.ogg"
     },
     {
-        "id": 6,
-        "name": "Cicadas",
-        "category": "Nature",
-        "iconName": "locust",
-        "authorName": "mannhawks",
-        "originalName": "cicadas_loud",
-        "originalAudioLink": "https://freesound.org/s/162682/",
-        "audioSrc": "https://cdn.freesound.org/previews/162/162682_2028587-lq.ogg"
-    },
-    {
-        "id": 7,
-        "name": "Frogs",
-        "category": "Nature",
-        "iconName": "frog",
-        "authorName": "Nox_Sound",
-        "originalName": "Ambiance_Frog_Night_Loop_Stereo",
-        "originalAudioLink": "https://freesound.org/s/482117/",
-        "audioSrc": "https://cdn.freesound.org/previews/482/482117_9250976-lq.ogg"
-    },
-    {
-        "id": 8,
+        "id": "5",
         "name": "River",
         "category": "Nature",
         "iconName": "water",
@@ -80,7 +50,7 @@
         "audioSrc": "https://cdn.freesound.org/previews/548/548767_1474204-lq.ogg"
     },
     {
-        "id": 9,
+        "id": "6",
         "name": "Campfire",
         "category": "Ambiance",
         "iconName": "fire",
