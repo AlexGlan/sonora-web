@@ -18,3 +18,10 @@ a {
         color: $clr-mauve;
     }
 }
+
+.error-message {
+    display: inline-block;
+    font-size: 1.4rem;
+    color: $clr-red;
+    text-align: center;
+}

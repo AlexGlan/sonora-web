@@ -1,21 +1,39 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import data from './audioData.json';
+import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
+import coreAudioPackage from './coreAudioPackage.json';
 
-type AudioTrack = {
-    id: number,
+type ResponseData = {
+    _id: string,
     name: string,
-    category: string,
-    audioSrc: string,
-    iconName: string,
+    category?: string,
+    iconName?: string,
+    authorName: string,
+    originalName: string,
+    originalAudioLink: string,
+    audioSrc: string
+}[]
+
+type AudioResponse = { data: ResponseData, error: null } | { data: null, error: string }
+
+export type AudioTrack = {
+    id: string,
+    name: string,
+    category?: string,
+    iconName?: string,
+    authorName: string,
+    originalName: string,
+    originalAudioLink: string,
+    audioSrc: string
     volume: number,
     isPlaying: boolean,
 }
 
 type AudioState = {
     tracks: {
-        byId: Record<number, AudioTrack>,
-        allIds: number[]
+        byId: Record<string, AudioTrack>,
+        allIds: string[]
     },
+    status: 'idle' | 'pending' | 'succeeded' | 'failed',
+    error: string | null,
 }
 
 const initialState: AudioState = {
@@ -23,31 +41,61 @@ const initialState: AudioState = {
         byId: {},
         allIds: []
     },
+    status: 'idle',
+    error: null,
 }
-data.forEach(track => {
+
+coreAudioPackage.forEach(track => {
     initialState.tracks.byId[track.id] = {
         id: track.id,
         name: track.name,
         category: track.category,
-        audioSrc: track.audioSrc,
         iconName: track.iconName,
-        volume: track.name === 'Rain' || track.name === 'Crickets' ? 30 : 0,
+        authorName: track.authorName,
+        originalName: track.originalName,
+        originalAudioLink: track.originalAudioLink,
+        audioSrc: track.audioSrc,
+        volume: 0,
         isPlaying: false,
     };
     initialState.tracks.allIds.push(track.id);
 });
 
+export const fetchAudioTracks = createAsyncThunk<
+    ResponseData,
+    void,
+    { rejectValue: string }
+>(
+    'audio/fetchAudioTracks',
+    async (_, { rejectWithValue }) => {
+        try {
+            const response = await fetch('https://sonora-api-2oow.onrender.com/api/audio');
+            const audioData: AudioResponse = await response.json();
+
+            if (audioData.data && audioData.data.length > 0) {
+                return audioData.data;
+            } else {
+                console.error(audioData.error);
+                return rejectWithValue('Unable to fetch audio tracks');
+            }
+        } catch (error) {
+            console.error(error);
+            return rejectWithValue('Unable to fetch audio tracks');
+        }
+    }
+);
+
 export const audioSlice = createSlice({
     name: 'audio',
     initialState,
     reducers: {
-        setVolume: (state, action: PayloadAction<{trackId: number, volume: number}>) => {
+        setVolume: (state, action: PayloadAction<{trackId: string, volume: number}>) => {
             const { trackId, volume } = action.payload;
             if (state.tracks.byId[trackId]) {
                 state.tracks.byId[trackId].volume = volume;
             }
         },
-        setPlayStatus: (state, action: PayloadAction<{trackId: number, isPlaying: boolean}>) => {
+        setPlayStatus: (state, action: PayloadAction<{trackId: string, isPlaying: boolean}>) => {
             const { trackId, isPlaying } = action.payload;
             if (state.tracks.byId[trackId]) {
                 state.tracks.byId[trackId].isPlaying = isPlaying;
@@ -73,9 +121,52 @@ export const audioSlice = createSlice({
                 }
             });
         },
-        resetTracks: () => {
-            return initialState;
+        resetTracks: (state) => {
+            state.tracks.allIds.forEach(trackId => {
+                state.tracks.byId[trackId].volume = 0;
+                state.tracks.byId[trackId].isPlaying = false;
+            });
         },
+    },
+    extraReducers: (builder) => {
+        builder
+            .addCase(fetchAudioTracks.pending, (state) => {
+                state.status = 'pending';
+            })
+            .addCase(fetchAudioTracks.fulfilled, (state, action: PayloadAction<ResponseData>): AudioState => {
+                // Explicitly replace the state with new fetched data
+                return {
+                    ...state,
+                    tracks: {
+                        byId: Object.fromEntries(
+                            action.payload.map(track => {
+                                return [
+                                    track._id,
+                                    {
+                                        id: track._id,
+                                        name: track.name,
+                                        category: track.category,
+                                        iconName: track.iconName,
+                                        authorName: track.authorName,
+                                        originalName: track.originalName,
+                                        originalAudioLink: track.originalAudioLink,
+                                        audioSrc: track.audioSrc,
+                                        volume: 0,
+                                        isPlaying: false,
+                                    }
+                                ]
+                            })
+                        ),
+                        allIds: action.payload.map(track => track._id)
+                    },
+                    status: 'succeeded',
+                    error: null
+                }
+            })
+            .addCase(fetchAudioTracks.rejected, (state, action: PayloadAction<string | undefined>) => {
+                state.status = 'failed';
+                state.error = action.payload ?? 'Unknown Error';
+            })
     }
 });
 

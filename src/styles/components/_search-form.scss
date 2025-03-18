@@ -71,11 +71,4 @@
         @include interactive-form-button;
         padding: 1rem;
     }
-
-    .error-message {
-        display: inline-block;
-        font-size: 1.4rem;
-        color: $clr-red;
-        text-align: center;
-    }
 }
