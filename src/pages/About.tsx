@@ -1,10 +1,13 @@
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useAppSelector } from "../app/hooks";
 import NavBar from "../components/NavBar";
-import audioData from '../store/audioData.json';
 import Footer from "../components/Footer";
+import { AudioTrack } from "../store/audioSlice.js";
 
 const About = () => {
+    const audioData: Record<string, AudioTrack> = useAppSelector(state => state.audio.tracks.byId);
+
     return (
         <>
             <NavBar />
@@ -31,7 +34,7 @@ const About = () => {
                     </p>
                     <ul className="about__credits-list" aria-label="Audio Credits">
                         {
-                            audioData.map(track => {
+                            Object.values(audioData).map(track => {
                                 return (
                                     <li key={`attr_${track.id}`}>
                                         <a href={track.originalAudioLink} target="_blank">

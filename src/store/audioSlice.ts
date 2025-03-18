@@ -14,7 +14,7 @@ type ResponseData = {
 
 type AudioResponse = { data: ResponseData, error: null } | { data: null, error: string }
 
-type AudioTrack = {
+export type AudioTrack = {
     id: string,
     name: string,
     category?: string,
