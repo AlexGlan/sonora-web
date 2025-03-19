@@ -1,40 +1,6 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
-import coreAudioPackage from './coreAudioPackage.json';
-import { AudioTrack, ResponseData, AudioResponse } from "../types/types";
-
-type AudioState = {
-    tracks: {
-        byId: Record<string, AudioTrack>,
-        allIds: string[]
-    },
-    status: 'idle' | 'pending' | 'succeeded' | 'failed',
-    error: string | null,
-}
-
-const initialState: AudioState = {
-    tracks: {
-        byId: {},
-        allIds: []
-    },
-    status: 'idle',
-    error: null,
-}
-
-coreAudioPackage.forEach(track => {
-    initialState.tracks.byId[track.id] = {
-        id: track.id,
-        name: track.name,
-        category: track.category,
-        iconName: track.iconName,
-        authorName: track.authorName,
-        originalName: track.originalName,
-        originalAudioLink: track.originalAudioLink,
-        audioSrc: track.audioSrc,
-        volume: 0,
-        isPlaying: false,
-    };
-    initialState.tracks.allIds.push(track.id);
-});
+import { ResponseData, AudioResponse } from "../types/types";
+import initialState from './initialAudioState.js';
 
 export const fetchAudioTracks = createAsyncThunk<
     ResponseData,
@@ -108,7 +74,7 @@ export const audioSlice = createSlice({
             .addCase(fetchAudioTracks.pending, (state) => {
                 state.status = 'pending';
             })
-            .addCase(fetchAudioTracks.fulfilled, (state, action: PayloadAction<ResponseData>): AudioState => {
+            .addCase(fetchAudioTracks.fulfilled, (state, action: PayloadAction<ResponseData>): typeof initialState => {
                 // Explicitly replace the state with new fetched data
                 return {
                     ...state,
