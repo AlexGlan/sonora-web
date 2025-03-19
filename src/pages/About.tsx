@@ -1,9 +1,9 @@
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useAppSelector } from "../app/hooks";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
-import { AudioTrack } from "../store/audioSlice.js";
+import { AudioTrack } from "../types/types";
+import { useAppSelector } from "../hooks/hooks";
 
 const About = () => {
     const audioData: Record<string, AudioTrack> = useAppSelector(state => state.audio.tracks.byId);

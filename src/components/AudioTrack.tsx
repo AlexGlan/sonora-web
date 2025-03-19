@@ -1,9 +1,9 @@
 import { useRef } from "react";
 import { faPause, faPlay } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useAppDispatch, useAppSelector } from "../app/hooks";
 import { setVolume, setPlayStatus } from "../store/audioSlice";
 import { getImageUrl } from "../utils/imageUtils";
+import { useAppSelector, useAppDispatch } from "../hooks/hooks";
 
 type AudioTrackProps = {
     trackId: string,

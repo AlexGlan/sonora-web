@@ -1,4 +1,4 @@
-import { useAppDispatch, useAppSelector } from "../app/hooks";
+import { useAppSelector, useAppDispatch } from "../hooks/hooks";
 import { fetchAudioTracks } from "../store/audioSlice.js";
 import AudioTrack from "./AudioTrack";
 import Spinner from "./Spinner.js";
