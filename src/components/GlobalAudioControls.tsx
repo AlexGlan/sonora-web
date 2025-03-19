@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { useAppDispatch } from "../app/hooks";
 import { resetTracks, setGlobalPlayStatus, setGlobalVolume } from "../store/audioSlice";
 import { faArrowRotateRight, faPause, faPlay } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useAppDispatch } from "../hooks/hooks";
 
 const GlobalAudioControls = () => {
     const [isPlaying, setIsPlaying] = useState<boolean>(false);

@@ -1,31 +1,6 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import coreAudioPackage from './coreAudioPackage.json';
-
-type ResponseData = {
-    _id: string,
-    name: string,
-    category?: string,
-    iconName?: string,
-    authorName: string,
-    originalName: string,
-    originalAudioLink: string,
-    audioSrc: string
-}[]
-
-type AudioResponse = { data: ResponseData, error: null } | { data: null, error: string }
-
-export type AudioTrack = {
-    id: string,
-    name: string,
-    category?: string,
-    iconName?: string,
-    authorName: string,
-    originalName: string,
-    originalAudioLink: string,
-    audioSrc: string
-    volume: number,
-    isPlaying: boolean,
-}
+import { AudioTrack, ResponseData, AudioResponse } from "../types/types";
 
 type AudioState = {
     tracks: {

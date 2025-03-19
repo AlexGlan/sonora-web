@@ -1,4 +1,4 @@
-import { useAppSelector } from "../app/hooks";
+import { useAppSelector } from "../hooks/hooks";
 
 const YoutubeVideoPlayer = () => {
     const videoId: string | null = useAppSelector(state => state.video.videoId);

@@ -1,4 +1,4 @@
-import { useAppDispatch, useAppSelector } from "../app/hooks";
+import { useAppSelector, useAppDispatch } from "../hooks/hooks";
 import { resetSearchQuery, setSearchQuery, setVideoSrc } from "../store/videoSlice";
 import SearchForm from "./SearchForm";
 import YoutubeVideoPlayer from "./YoutubeVideoPlayer"
