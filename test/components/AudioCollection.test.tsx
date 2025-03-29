@@ -24,6 +24,8 @@ describe('AudioCollection', () => {
         const { user } = renderWithProviders();
 
         await user.click(screen.getByRole('button', { name: /load/i }));
+        // Should show toast notification
+        expect(screen.getByRole('alert')).toBeInTheDocument();
 
         const audioList = screen.getByRole('list', {name: /audio/i});
         const audioTracks = within(audioList).getAllByRole('listitem');
@@ -45,7 +47,9 @@ describe('AudioCollection', () => {
         }));
 
         await user.click(screen.getByRole('button', { name: /load/i }));
-
+        // Should show error message
         expect(screen.getByText(/unable|error/i)).toBeInTheDocument();
+        // Should show toast notification
+        expect(screen.getByRole('alert')).toBeInTheDocument();
     });
 });
