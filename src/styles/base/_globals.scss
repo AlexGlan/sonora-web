@@ -1,5 +1,13 @@
 @use '../abstracts' as *;
 
+:root {
+    --toastify-color-light: #{$clr-surface-1};
+    --toastify-color-success: #{$clr-green};
+    --toastify-color-error: #{$clr-red};
+    --toastify-font-family: #{$ff-primary};
+    --toastify-text-color-light: #{$clr-text-primary};
+}
+
 body {
     background-color: $clr-base;
 }

@@ -1,3 +1,4 @@
+import { toast, ToastContainer, ToastOptions } from "react-toastify";
 import { useAppSelector, useAppDispatch } from "../hooks/hooks";
 import { fetchAudioTracks } from "../store/audioSlice.js";
 import AudioTrack from "./AudioTrack";
@@ -8,9 +9,34 @@ const AudioCollection = () => {
     const status = useAppSelector(state => state.audio.status);
     const error = useAppSelector(state => state.audio.error);
     const dispatch = useAppDispatch();
+    const toastOpts: ToastOptions = {
+        autoClose: 2000,
+        position: 'bottom-center',
+        pauseOnHover: false,
+        pauseOnFocusLoss: false,
+    }
 
     const handleClick = (): void => {
         dispatch(fetchAudioTracks());
+    }
+
+    // Show toast notification after data fetching request
+    if (status === 'succeeded') {
+        toast.success(
+            'Successfully loaded data!',
+            {
+                ...toastOpts,
+                ariaLabel: 'Successfully loaded data'
+            }
+        );
+    } else if (status === 'failed') {
+        toast.error(
+            'Failed to load data.',
+            {
+                ...toastOpts,
+                ariaLabel: 'Failed to load data'
+            }
+        );
     }
 
     return (
@@ -36,7 +62,7 @@ const AudioCollection = () => {
                     *This is a hobby project on free infrastructure, so expect cold starts and some waiting time <span>🐢</span>
                 </span>
             </div>
-           
+           <ToastContainer limit={3} />
         </section>
     )
 }
