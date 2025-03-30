@@ -52,4 +52,15 @@ describe('AudioCollection', () => {
         // Should show toast notification
         expect(screen.getByRole('alert')).toBeInTheDocument();
     });
+
+    it('Should not show toast notifications when navigating between pages', async () => {
+        const { user } = renderWithProviders();
+        // Perform data fetch request
+        await user.click(screen.getByRole('button', { name: /load/i }));
+        // Perform page navigation
+        await user.click(screen.getByRole('link', { name: /about/i }));
+        await user.click(screen.getByRole('link', { name: /home/i }));
+
+        expect(screen.queryByRole('alert')).not.toBeInTheDocument();
+    });
 });
