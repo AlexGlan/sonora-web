@@ -16,27 +16,26 @@ const AudioCollection = () => {
         pauseOnFocusLoss: false,
     }
 
-    const handleClick = (): void => {
-        dispatch(fetchAudioTracks());
-    }
-
-    // Show toast notification after data fetching request
-    if (status === 'succeeded') {
-        toast.success(
-            'Successfully loaded data!',
-            {
-                ...toastOpts,
-                ariaLabel: 'Successfully loaded data'
-            }
-        );
-    } else if (status === 'failed') {
-        toast.error(
-            'Failed to load data.',
-            {
-                ...toastOpts,
-                ariaLabel: 'Failed to load data'
-            }
-        );
+    const handleClick = async () => {
+        const result = await dispatch(fetchAudioTracks());
+        // Show toast notification after data fetching request
+        if (result.meta.requestStatus === 'fulfilled') {
+            toast.success(
+                'Successfully loaded data!',
+                {
+                    ...toastOpts,
+                    ariaLabel: 'Successfully loaded data'
+                }
+            );
+        } else if (result.meta.requestStatus === 'rejected') {
+            toast.error(
+                'Failed to load data.',
+                {
+                    ...toastOpts,
+                    ariaLabel: 'Failed to load data'
+                }
+            );
+        }
     }
 
     return (
