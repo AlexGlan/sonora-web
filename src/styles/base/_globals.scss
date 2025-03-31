@@ -27,9 +27,31 @@ a {
     }
 }
 
+.btn-pill {
+    cursor: pointer;
+    min-width: 15rem;
+    padding: .9em 1.2em;
+    margin: .8em 0;
+    font-family: $ff-primary;
+    font-size: 1.3rem;
+    font-weight: $fw-bold;
+    text-align: center;
+    color: $clr-lavender;
+    background-color: $clr-surface-0;
+    border: 1px solid transparent;
+    border-radius: 2rem;
+    transition: background-color .2s ease-out;
+}
+
 .error-message {
     display: inline-block;
     font-size: 1.4rem;
     color: $clr-red;
     text-align: center;
+}
+
+@media (hover: hover) {
+    .btn-pill:is(:hover,:focus) {
+        background-color: $clr-surface-2;
+    }
 }

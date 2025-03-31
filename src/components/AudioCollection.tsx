@@ -54,7 +54,7 @@ const AudioCollection = () => {
             <div className="audio__load">
                 {status === 'pending'
                     ? <Spinner />
-                    : <button onClick={handleClick} className="audio__load-btn">Load more audio</button>
+                    : <button onClick={handleClick} className="btn-pill">Load more audio</button>
                 }
                 {error && <strong className="error-message">{error}</strong>}
                 <span className="audio__load-disclaimer">
