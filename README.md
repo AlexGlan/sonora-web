@@ -58,6 +58,10 @@ npm run test:ui
 npm run coverage
 ```
 
+## Resources
+
+- 🔗 Backend repository: [Sonora API](https://github.com/alexglan/sonora-api)
+
 ## License
 * [GNU GPL v3](LICENSE)
 * [Lotus Icon](https://emojipedia.org/whatsapp/2.24.2.76/lotus)
